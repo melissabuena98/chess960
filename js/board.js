@@ -118,3 +118,27 @@ Chess.Board.prototype.placePiece = function(i, j) {
     return null;
   }
 };
+
+function randomizePieces(){
+  
+}
+
+/**
+ * RULES: 
+ * 1. Bishops must be placed on opposite-color squares
+ * 2. The king must be placed on a square between the rooks
+ * 
+ * Randomly place both rooks down between where i = 7 and j is between 0 and 7
+ * 
+ * Depending on what the j is for rook use this as bounds to place King
+ * Randomly place king between the j index of the rooks
+ * 
+ * Create squares array of coordinates, all valid spots, remove as they get taken
+ * Create Black and White Spots array coordinates and 
+ * When a spot gets taken, it is removed from valid squares array and removed from the black or white
+ * 
+ * Randomize if 1st bishop will be on white or black spot
+ * Randomly pick spot from the black or white array and add to is taken and remove from
+ * 
+ * for each remaining spot, asssign both knights and the queen
+ */
