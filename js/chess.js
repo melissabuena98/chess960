@@ -1,12 +1,20 @@
 window.Chess = window.Chess || {
-  newGame: function() {
+  newGame: function(gameID) {
+    this.gameID = gameID;
     this.startPos = null;
     this.endPos = null;
     this.board = new this.Board();
     this.display = new this.Display(this.board);
-    this.bKing = this.board.grid[0][4];
-    this.wKing = this.board.grid[7][4];
     this.currentTurn = "white";
+
+    if(gameID == 0){
+      this.bKing = this.board.grid[0][4];
+      this.wKing = this.board.grid[7][4];
+    }
+    else if(gameID == 1){
+      this.bKing = this.board.grid[0][this.board.king];
+      this.wKing = this.board.grid[7][this.board.king];
+    }
   },
 
   selectPosition: function(array) {
